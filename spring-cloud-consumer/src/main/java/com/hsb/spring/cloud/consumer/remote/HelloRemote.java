@@ -2,9 +2,12 @@ package com.hsb.spring.cloud.consumer.remote;/**
  * Created by heshengbang on 2018/7/13.
  */
 
+import com.hsb.spring.cloud.consumer.dto.User;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * Created by heshengbang on 2018/7/13.
@@ -22,4 +25,7 @@ public interface HelloRemote {
     //传统api调用
 /*    @GetMapping(value = "/hello")
     public String hello(@RequestParam(value = "name") String name);*/
+
+    @PostMapping("/echo/echo")
+    String echo(@RequestBody User user);
 }
