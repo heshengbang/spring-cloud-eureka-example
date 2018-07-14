@@ -11,3 +11,21 @@ This project provide three modules. Eureka Server/service producer/service consu
 > hello! heshengbang
 
 spring-cloud-consumer through eureka-server find service that spring-cloud-produer provide. when some request come to spring-cloud-consumer, it will call spring-cloud-producer to finish this request.
+
+## key words
+- swagger #
+- Feign/Spring boot/spring cloud/Eureka #
+- HBase
+- elasticjob
+- rabbitmq
+- redis
+- druid
+- pageHelper
+- mybatis
+- lombok #
+- TkMapper
+- p3c
+- mvn clean compile checkstyle:check findbugs:check
+- zuul
+
+Attention, the items marked by `#` had been integrated to this project, and left items will be integrate in the future.
