@@ -1,4 +1,4 @@
-package com.hsb.spring.cloud.consumer.dto;
+package com.hsb.spring.cloud.consumer.hello.dto;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

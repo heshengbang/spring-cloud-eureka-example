@@ -1,9 +1,9 @@
-package com.hsb.spring.cloud.consumer.web;/**
+package com.hsb.spring.cloud.consumer.hello.web;/**
  * Created by heshengbang on 2018/7/13.
  */
 
-import com.hsb.spring.cloud.consumer.dto.User;
-import com.hsb.spring.cloud.consumer.remote.HelloRemote;
+import com.hsb.spring.cloud.consumer.hello.dto.User;
+import com.hsb.spring.cloud.consumer.hello.remote.HelloRemote;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

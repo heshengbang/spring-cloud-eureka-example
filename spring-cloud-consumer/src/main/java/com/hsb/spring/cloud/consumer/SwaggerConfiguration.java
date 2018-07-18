@@ -1,4 +1,4 @@
-package com.hsb.spring.cloud;
+package com.hsb.spring.cloud.consumer;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +26,7 @@ public class SwaggerConfiguration {
                 .apiInfo(apiInfo())
                 .select()
                 // 扫描该包下的所有需要在Swagger中展示的API，@ApiIgnore注解标注的除外
-                .apis(RequestHandlerSelectors.basePackage("com.hsb.spring.cloud"))
+                .apis(RequestHandlerSelectors.basePackage("com.hsb.spring.cloud.api"))
                 .paths(PathSelectors.any())
                 .build();
     }

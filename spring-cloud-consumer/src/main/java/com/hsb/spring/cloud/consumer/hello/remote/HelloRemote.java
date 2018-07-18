@@ -1,8 +1,8 @@
-package com.hsb.spring.cloud.consumer.remote;/**
+package com.hsb.spring.cloud.consumer.hello.remote;/**
  * Created by heshengbang on 2018/7/13.
  */
 
-import com.hsb.spring.cloud.consumer.dto.User;
+import com.hsb.spring.cloud.consumer.hello.dto.User;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

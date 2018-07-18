@@ -1,8 +1,8 @@
-package com.hsb.spring.cloud.user.service;
+package com.hsb.spring.cloud.consumer.user.service;
 
 import com.hsb.spring.cloud.api.dto.UserDto;
 import com.hsb.spring.cloud.api.vo.UserVo;
-import com.hsb.spring.cloud.user.api.UserService;
+import com.hsb.spring.cloud.consumer.user.api.UserService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

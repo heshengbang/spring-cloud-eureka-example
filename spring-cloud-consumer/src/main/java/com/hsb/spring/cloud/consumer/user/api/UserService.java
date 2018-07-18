@@ -1,4 +1,4 @@
-package com.hsb.spring.cloud.user.api;
+package com.hsb.spring.cloud.consumer.user.api;
 
 import com.hsb.spring.cloud.api.service.HelloUserService;
 import org.springframework.cloud.netflix.feign.FeignClient;
