@@ -1,4 +1,4 @@
-package com.hsb.spring.cloud.consumer;/**
+package com.hsb.spring.cloud;/**
  * Created by heshengbang on 2018/7/13.
  */
 

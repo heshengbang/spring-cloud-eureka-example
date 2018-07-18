@@ -24,21 +24,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     //restful api方式
-    @ApiOperation(value="通过get方法访问", notes="测试get方式发送的请求")// 使用该注解描述接口方法信息
+    // 使用该注解描述接口方法信息
+    @ApiOperation(value="通过get方法访问", notes="测试get方式发送的请求")
+    // 使用该注解描述方法参数信息，此处需要注意的是paramType参数，需要配置成path，否则在UI中访问接口方法时，会报错
     @ApiImplicitParams({
             @ApiImplicitParam(name = "name", value = "访问者名字", required = true, dataType = "String", paramType="path")
-    })// 使用该注解描述方法参数信息，此处需要注意的是paramType参数，需要配置成path，否则在UI中访问接口方法时，会报错
+    })
     @GetMapping("/hello/{name}")
     public String hello(@PathVariable String name) {
         log.info("一个get请求到达，它的参数是：" + name);
         return "hello! " + name;
     }
-
-    //传统api方式
-    /*@RequestMapping("/hello")
-    public String index(@RequestParam String name) {
-        return "hello " + name + "，this is first messge";
-    }*/
 
     @ApiOperation(value="通过post方法访问的请求")
     @PostMapping("/echo/echo")

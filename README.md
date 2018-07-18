@@ -27,5 +27,6 @@ spring-cloud-consumer through eureka-server find service that spring-cloud-produ
 - p3c
 - mvn clean compile checkstyle:check findbugs:check
 - zuul
+- zookeeper
 
 Attention, the items marked by `#` had been integrated to this project, and left items will be integrate in the future.

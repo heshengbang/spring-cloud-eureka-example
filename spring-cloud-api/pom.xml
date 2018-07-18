@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.hsb.spring.cloud.consumer</groupId>
-    <artifactId>spring-cloud-consumer</artifactId>
+    <groupId>com.hsb.spring.cloud.apit</groupId>
+    <artifactId>spring-cloud-api</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>
@@ -20,29 +20,16 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Dalston.RELEASE</spring-cloud.version>
+        <lombok.version>1.16.16</lombok.version>
         <swagger.version>2.2.2</swagger.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.16</version>
+            <version>${lombok.version}</version>
         </dependency>
-
         <!-- swagger2 -->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -55,29 +42,4 @@
             <version>${swagger.version}</version>
         </dependency>
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
 </project>
