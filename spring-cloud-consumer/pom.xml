@@ -25,6 +25,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.hsb.spring.cloud.api</groupId>
+            <artifactId>spring-cloud-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
