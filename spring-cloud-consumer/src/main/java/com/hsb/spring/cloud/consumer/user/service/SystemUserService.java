@@ -1,9 +1,10 @@
 package com.hsb.spring.cloud.consumer.user.service;
 
-import com.hsb.spring.cloud.api.dto.UserDto;
+import com.hsb.spring.cloud.api.dto.UserDataDto;
 import com.hsb.spring.cloud.api.vo.UserVo;
 import com.hsb.spring.cloud.consumer.user.api.UserService;
 import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,9 @@ import org.springframework.stereotype.Service;
  * email: trulyheshengbang@gmail.com
  */
 @Service
+@Slf4j
 public class SystemUserService {
+
     private final UserService userService;
 
     @Autowired
@@ -34,15 +37,15 @@ public class SystemUserService {
         return userService.findUserByGender(gender);
     }
 
-    public boolean updateUser(UserDto userDto) {
-        return userService.updateUser(userDto);
+    public boolean updateUser(UserDataDto userDataDto) {
+        return userService.updateUser(userDataDto);
     }
 
-    public boolean insertUser(UserDto userDto) {
-        return userService.insertUser(userDto);
+    public boolean insertUser(UserDataDto userDataDto) {
+        return userService.insertUser(userDataDto);
     }
 
-    public boolean deleteUser(UserDto userDto) {
-        return userService.deleteUser(userDto);
+    public boolean deleteUser(UserDataDto userDataDto) {
+        return userService.deleteUser(userDataDto);
     }
 }

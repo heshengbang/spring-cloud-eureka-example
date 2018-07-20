@@ -10,6 +10,6 @@ import org.springframework.cloud.netflix.feign.FeignClient;
  * email: trulyheshengbang@gmail.com
  */
 
-@FeignClient(name= "spring-cloud-producer")
+@FeignClient(name= "${spring-cloud-producer}")
 public interface UserService extends HelloUserService {
 }

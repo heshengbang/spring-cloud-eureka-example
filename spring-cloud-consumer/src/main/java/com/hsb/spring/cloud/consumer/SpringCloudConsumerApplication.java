@@ -17,7 +17,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 //启用服务注册与发现
 @EnableDiscoveryClient
 //启用feign进行远程调用
-@EnableFeignClients
+@EnableFeignClients(basePackages = {"com.hsb.spring.cloud.consumer.user.api"})
 public class SpringCloudConsumerApplication {
 
     public static void main(String[] args) {

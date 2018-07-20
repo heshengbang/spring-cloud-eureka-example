@@ -1,4 +1,4 @@
-package com.hsb.spring.cloud.api.vo;
+package com.hsb.spring.cloud.api.dto;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -6,14 +6,14 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * Created by heshengbang on 2018/7/18.
+ * Created by heshengbang on 2018/7/20.
  * https://github.com/heshengbang
  * www.heshengbang.men
  * email: trulyheshengbang@gmail.com
  */
 @Data
 @ApiModel
-public class UserVo {
+public class UserDataDto {
     @ApiModelProperty("社会统一标示号")
     private String socialId;
     @ApiModelProperty("用户名")

@@ -13,6 +13,8 @@ import lombok.Data;
 @Data
 @ApiModel
 public class UserDto {
+        @ApiModelProperty("社会统一标示号")
+        private String socialId;
         @ApiModelProperty("用户名")
         private String username;
         @ApiModelProperty("性别")

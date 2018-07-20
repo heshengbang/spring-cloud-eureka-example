@@ -3,7 +3,6 @@ package com.hsb.spring.cloud.consumer.hello.remote;/**
  */
 
 import com.hsb.spring.cloud.consumer.hello.dto.User;
-import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * www.heshengbang.men
  * email: trulyheshengbang@gmail.com
  */
-@FeignClient(name= "spring-cloud-producer")
+//@FeignClient(name= "{spring-cloud-producer}")
 public interface HelloRemote {
 
     //restful api 调用
