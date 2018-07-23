@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: spring-cloud-eureka
+server:
+  port: 8000
+eureka:
+  # 此处表示创建一个实例，此实例将作为eureka server的地址，因此不会被注册到DS Replicas
+  instance:
+    hostname: localhost
+  server:
+    # 检查服务失效的时间间隔
+    eviction-interval-timer-in-ms: 30000
+    # 关闭服务保护：服务一旦失效就会被移除，生产上不建议关闭
+    enable-self-preservation: true
+  client:
+    # 表示是否注册自身到eureka服务器，本项目作为eureka服务器，没必要将自己注册到自己上面，因此为false
+    register-with-eureka: false
+    # 表示是否从Eureka Server获取已注册的信息，本项目作为eureka服务器，不必从自己上面获取信息，因此为false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+security:
+  basic:
+    # 启用基本身份认证，当此处为false时，eureka将不需要用户名密码登录即可访问
+    enabled: false
+  user:
+      name: user
+      password: 123456
