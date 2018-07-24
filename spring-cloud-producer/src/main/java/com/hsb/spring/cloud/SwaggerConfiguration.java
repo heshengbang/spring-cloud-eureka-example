@@ -26,7 +26,7 @@ public class SwaggerConfiguration {
                 .apiInfo(apiInfo())
                 .select()
                 // 扫描该包下的所有需要在Swagger中展示的API，@ApiIgnore注解标注的除外
-                .apis(RequestHandlerSelectors.basePackage("com.hsb.spring.cloud.producer"))
+                .apis(RequestHandlerSelectors.basePackage("com.hsb.spring.cloud.user.web"))
                 .paths(PathSelectors.any())
                 .build();
     }

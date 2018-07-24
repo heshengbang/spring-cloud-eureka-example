@@ -15,6 +15,29 @@
         <relativePath />
     </parent>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.hsb.spring.cloud.api</groupId>
+            <artifactId>spring-cloud-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hsb.spring.cloud.web</groupId>
+            <artifactId>spring-cloud-web</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>1.5.10.RELEASE</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
