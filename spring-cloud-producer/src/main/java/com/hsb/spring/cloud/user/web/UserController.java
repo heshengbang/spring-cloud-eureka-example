@@ -1,6 +1,6 @@
 package com.hsb.spring.cloud.user.web;
 
-import com.hsb.spring.cloud.api.dto.UserDto;
+import com.hsb.spring.cloud.api.dto.UserDataDto;
 import com.hsb.spring.cloud.api.vo.UserVo;
 import com.hsb.spring.cloud.util.UserDataUtil;
 import io.swagger.annotations.Api;
@@ -52,22 +52,22 @@ public class UserController {
 
     @PostMapping("/insertUser")
     @ApiOperation(value = "插入用户", notes = "用户对象为参数")
-    public boolean insertUser(@ApiParam("用户实体对象") @RequestBody UserDto userDto) {
+    public boolean insertUser(@ApiParam("用户实体对象") @RequestBody UserDataDto userDataDto) {
         log.info("======================/insertUser was called");
-        return UserDataUtil.insertUser(userDto);
+        return UserDataUtil.insertUser(userDataDto);
     }
 
     @PutMapping("/updateUser")
     @ApiOperation("修改用户")
-    public boolean updateUser(UserDto userDto) {
+    public boolean updateUser(UserDataDto userDataDto) {
         log.info("======================/updateUser was called");
-        return UserDataUtil.updateUser(userDto);
+        return UserDataUtil.updateUser(userDataDto);
     }
 
     @DeleteMapping("/deleteUser")
     @ApiOperation("插入用户")
-    public boolean deleteUser(UserDto userDto) {
+    public boolean deleteUser(UserDataDto userDataDto) {
         log.info("======================/deleteUser was called");
-        return UserDataUtil.deleteUser(userDto);
+        return UserDataUtil.deleteUser(userDataDto);
     }
 }

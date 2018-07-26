@@ -1,6 +1,6 @@
 package com.hsb.spring.cloud.util;
 
-import com.hsb.spring.cloud.api.dto.UserDto;
+import com.hsb.spring.cloud.api.dto.UserDataDto;
 import com.hsb.spring.cloud.api.vo.UserVo;
 import java.util.ArrayList;
 import java.util.Date;
@@ -82,17 +82,17 @@ public class UserDataUtil {
     }
 
      
-    public static boolean insertUser(UserDto userDto) {
+    public static boolean insertUser(UserDataDto userDataDto) {
         return true;
     }
 
      
-    public static boolean updateUser(UserDto userDto) {
+    public static boolean updateUser(UserDataDto userDataDto) {
         return true;
     }
 
      
-    public static boolean deleteUser(UserDto userDto) {
+    public static boolean deleteUser(UserDataDto userDataDto) {
         return false;
     }
 }

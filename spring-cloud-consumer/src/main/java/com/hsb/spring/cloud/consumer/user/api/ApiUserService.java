@@ -11,5 +11,5 @@ import org.springframework.cloud.netflix.feign.FeignClient;
  */
 
 @FeignClient(name= "${spring-cloud-producer}")
-public interface UserService extends HelloUserService {
+public interface ApiUserService extends HelloUserService {
 }
