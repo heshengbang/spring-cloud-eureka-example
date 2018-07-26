@@ -8,12 +8,11 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.10.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.hsb.spring.cloud.parent</groupId>
+    <groupId>com.hsb.spring.cloud.boot</groupId>
     <artifactId>spring-cloud-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>

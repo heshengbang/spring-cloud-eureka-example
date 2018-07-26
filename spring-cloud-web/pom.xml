@@ -13,10 +13,10 @@
     <description>web project for spring-cloud-eureka-example</description>
 
     <parent>
-        <groupId>com.hsb.spring.cloud.parent</groupId>
+        <groupId>com.hsb.spring.cloud.boot</groupId>
         <artifactId>spring-cloud-parent</artifactId>
-        <version>1.0-SNAPSHOT</version>
-        <relativePath />
+        <version>2.0-SNAPSHOT</version>
+        <relativePath>../spring-cloud-parent/pom.xml</relativePath>
     </parent>
 
     <properties>
