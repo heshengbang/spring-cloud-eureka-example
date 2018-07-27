@@ -1,17 +1,18 @@
-package com.hsb.spring.cloud.consumer.user.service;
+package com.hsb.spring.cloud.consumer.biz.user.service;
 
 import com.hsb.spring.cloud.api.dto.UserDataDto;
 import com.hsb.spring.cloud.api.vo.UserVo;
-import com.hsb.spring.cloud.consumer.user.api.ApiUserService;
-import java.util.List;
+import com.hsb.spring.cloud.consumer.biz.user.api.ApiUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by heshengbang on 2018/7/18.
  * https://github.com/heshengbang
- * www.heshengbang.men
+ * www.heshengbang.tech
  * email: trulyheshengbang@gmail.com
  */
 @Service

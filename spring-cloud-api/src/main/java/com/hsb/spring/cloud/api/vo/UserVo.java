@@ -2,13 +2,15 @@ package com.hsb.spring.cloud.api.vo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.Date;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 /**
  * Created by heshengbang on 2018/7/18.
  * https://github.com/heshengbang
- * www.heshengbang.men
+ * www.heshengbang.tech
  * email: trulyheshengbang@gmail.com
  */
 @Data
@@ -23,5 +25,6 @@ public class UserVo {
     @ApiModelProperty("地址")
     private String address;
     @ApiModelProperty("出生时间")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date burn;
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by heshengbang on 2018/7/26.
  * https://github.com/heshengbang
- * www.heshengbang.men
+ * www.heshengbang.tech
  * email: trulyheshengbang@gmail.com
  */
 @RestController

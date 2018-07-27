@@ -1,4 +1,4 @@
-package com.hsb.spring.cloud;
+package com.hsb.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,35 +11,34 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * Created by heshengbang on 2018/7/14.
- * https://github.com/heshengbang
- * www.heshengbang.tech
- * email: trulyheshengbang@gmail.com
+ * created by heshengbang
+ * Blog: https://www.heshengbang.tech
+ * Twitter: https://twitter.com/heshengbang
+ * Github: https://github.com/heshengbang
+ * Time: 2018/7/27 16:45
  */
+
 @Configuration
 @EnableSwagger2
-public class SwaggerConfiguration {
+public class Swagger2 {
+
 
     @Bean
-    public Docket createRestApi() {// 创建API基本信息
+    public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                // 扫描该包下的所有需要在Swagger中展示的API，@ApiIgnore注解标注的除外
-                .apis(RequestHandlerSelectors.basePackage("com.hsb.spring.cloud.user.web"))
+                .apis(RequestHandlerSelectors.basePackage("com.hsb.swagger.biz"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
-    // 创建API的基本信息，这些信息会在Swagger UI中进行显示
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                // API 标题
-                .title("Spring cloud producer")
-                // API描述
-                .description("服务提供方")
-                // 版本号
+                .title("xx项目 RESTful APIs")
+                .description("xx项目后台api接口文档")
                 .version("1.0")
                 .build();
     }
+
 }

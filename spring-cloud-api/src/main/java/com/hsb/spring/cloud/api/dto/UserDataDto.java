@@ -2,13 +2,14 @@ package com.hsb.spring.cloud.api.dto;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.Date;
 import lombok.Data;
+
+import java.util.Date;
 
 /**
  * Created by heshengbang on 2018/7/20.
  * https://github.com/heshengbang
- * www.heshengbang.men
+ * www.heshengbang.tech
  * email: trulyheshengbang@gmail.com
  */
 @Data

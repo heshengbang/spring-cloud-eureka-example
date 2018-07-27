@@ -10,7 +10,7 @@ import java.util.UUID;
 /**
  * Created by heshengbang on 2018/7/18.
  * https://github.com/heshengbang
- * www.heshengbang.men
+ * www.heshengbang.tech
  * email: trulyheshengbang@gmail.com
  */
 public class UserDataUtil {

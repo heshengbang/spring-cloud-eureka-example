@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * Created by heshengbang on 2018/7/14.
  * https://github.com/heshengbang
- * www.heshengbang.men
+ * www.heshengbang.tech
  * email: trulyheshengbang@gmail.com
  */
 @Configuration
@@ -21,12 +21,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfiguration {
 
     @Bean
-    public Docket createRestApi() {// 创建API基本信息
+    public Docket createApi() {// 创建API基本信息
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
                 // 扫描该包下的所有需要在Swagger中展示的API，@ApiIgnore注解标注的除外
-                .apis(RequestHandlerSelectors.basePackage("com.hsb.spring.cloud.api"))
+                .apis(RequestHandlerSelectors.basePackage("com.hsb.spring.cloud.consumer.biz.user"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -38,8 +38,10 @@ public class SwaggerConfiguration {
                 .title("前端使用接口列表")
                 // API描述
                 .description("提供给前端使用的接口信息")
+                .license("MIT")
+                .licenseUrl("www.heshengbang.tech")
                 // 联系人
-                .contact("heshengbang")
+                .contact("trulyheshengbang@gmail.com")
                 // 版本号
                 .version("1.0")
                 .build();
