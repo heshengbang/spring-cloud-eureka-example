@@ -2,7 +2,6 @@ package com.hsb.swagger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * created by heshengbang
@@ -12,7 +11,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * Time: 2018/7/27 16:42
  */
 @SpringBootApplication
-@EnableSwagger2
 public class SpringBoot2Application {
 
     public static void main(String[] args) {

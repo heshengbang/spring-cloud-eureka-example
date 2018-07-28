@@ -12,7 +12,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * Time: 2018/7/27 16:09
  */
 
-@Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
     @Override

@@ -1,4 +1,4 @@
-package com.hsb.swagger;
+package com.hsb.swagger.biz.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
