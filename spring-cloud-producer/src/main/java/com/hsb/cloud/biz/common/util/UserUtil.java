@@ -31,62 +31,62 @@ public class UserUtil {
         }
         for (int i = 0; i < 10; i++) {
             User user = new User();
-            user.setId(getId());
+            user.setId(getId(i));
             user.setAge(new Random().nextInt(100));
-            user.setAlias(getAlias());
+            user.setAlias(getAlias(i));
             user.setBirth(getBirth());
-            user.setCreateBy(getCreateBy(user.getId()));
+            user.setCreateBy(getCreateBy(user.getId(), i));
             user.setCreateTime(new Date());
-            user.setEmotional_state(getEmotionalState());
-            user.setGender(getGender());
-            user.setLocation(getLocation());
+            user.setEmotional_state(getEmotionalState(i));
+            user.setGender(getGender(i));
+            user.setLocation(getLocation(i));
             user.setPassword(UUID.randomUUID().toString());
             user.setSummary("....No Thanks");
-            user.setUpdateBy(getCreateBy(user.getId()));
+            user.setUpdateBy(getCreateBy(user.getId(), i));
             user.setUpdateTime(new Date());
-            user.setUsername(getUsername());
+            user.setUsername(getUsername(i));
             users.add(user);
         }
     }
 
-    private static String getAlias() {
+    private static String getAlias(int index) {
         List<String> alias = new ArrayList<>();
         alias.addAll(first_name);
         alias.addAll(last_name);
         Collections.shuffle(alias);
-        return alias.get(0).toUpperCase();
+        return alias.get(index % alias.size()).toUpperCase();
     }
 
-    private static String getLocation() {
+    private static String getLocation(int index) {
         Collections.shuffle(location);
-        return location.get(0);
+        return location.get(index % location.size());
     }
 
-    private static String getGender() {
+    private static String getGender(int index) {
         Collections.shuffle(gender);
-        return gender.get(0);
+        return gender.get(index % gender.size());
     }
 
-    private static String getEmotionalState() {
+    private static String getEmotionalState(int index) {
         Collections.shuffle(emotional_state);
-        return emotional_state.get(0);
+        return emotional_state.get(index % emotional_state.size());
     }
 
 
-    private static String getCreateBy(String id) {
+    private static String getCreateBy(String id, int index) {
         Collections.shuffle(ids);
-        return id.equals(ids.get(0)) ? ids.get(1) : ids.get(0);
+        return id.equals(ids.get(index % ids.size())) ? ids.get((index + 1)% ids.size()) : ids.get(index % ids.size());
     }
 
-    private static String getId() {
+    private static String getId(int index) {
         Collections.shuffle(ids);
-        return ids.get(0);
+        return ids.get(index % ids.size());
     }
 
-    private static String getUsername() {
+    private static String getUsername(int index) {
         Collections.shuffle(first_name);
         Collections.shuffle(last_name);
-        return first_name.get(0) + "." + last_name.get(0);
+        return first_name.get(index % first_name.size()) + "." + last_name.get(index % last_name.size());
     }
 
     private static Date getBirth() {

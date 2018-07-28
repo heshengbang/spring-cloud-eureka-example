@@ -17,6 +17,8 @@ import java.util.Date;
 public class UserVo {
     @ApiModelProperty("数据库众存放的id")
     private String id;
+    @ApiModelProperty("用户名")
+    private String username;
     @ApiModelProperty("用户昵称")
     private String alias;
     @ApiModelProperty("性别")

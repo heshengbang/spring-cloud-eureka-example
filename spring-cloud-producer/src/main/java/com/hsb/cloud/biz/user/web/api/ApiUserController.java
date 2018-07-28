@@ -55,6 +55,7 @@ public class ApiUserController implements FeignUserService {
         }
         UserVo userVo = new UserVo();
         userVo.setId(user.getId());
+        userVo.setUsername(user.getUsername());
         userVo.setGender(user.getGender());
         userVo.setAge(user.getAge());
         userVo.setAlias(user.getAlias());
