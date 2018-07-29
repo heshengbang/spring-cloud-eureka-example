@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -68,14 +69,14 @@ public class ApiUserController implements FeignUserService {
 
     @Override
     @ApiOperation(value = "通过用户名查找用户", notes = "传入参数为用户名，返回用户实体对象")
-    public UserVo findUserByUsername(@ApiParam("用户名参数") @RequestParam String username) {
+    public UserVo findUserByUsername(@ApiParam(value = "用户名参数", required = true) @RequestParam("username") String username) {
         User user = userService.findUserByUsername(username);
         return convertUserToVo(user);
     }
 
     @Override
     @ApiOperation(value = "通过用户id查找用户", notes = "传入参数为用户id，返回用户实体对象")
-    public UserVo findUserById(String id) {
+    public UserVo findUserById(@ApiParam(value = "用户id", required = true) @RequestParam("id") String id) {
         return convertUserToVo(userService.findUserById(id));
     }
 
@@ -85,7 +86,7 @@ public class ApiUserController implements FeignUserService {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "gender", value = "性别", required = true, dataType = "String", paramType="path")
     })
-    public List<UserVo> findUserByGender(@ApiParam("性别参数") @RequestParam String gender) {
+    public List<UserVo> findUserByGender(@ApiParam(value = "性别参数", required = true) @RequestParam String gender) {
         List<User> users = userService.findUserByGender(gender);
         List<UserVo> result = new ArrayList<>();
         for (User user: users) {
@@ -99,7 +100,7 @@ public class ApiUserController implements FeignUserService {
 
     @Override
     @ApiOperation("插入用户信息")
-    public boolean insertUser(@ApiParam("待插入的用户信息") @RequestBody UserDto userDto) {
+    public boolean insertUser(@Valid @ApiParam("待插入的用户信息") @RequestBody UserDto userDto) {
         User user = convertDtoToModel(userDto);
         return userService.insertUser(user);
     }
@@ -128,14 +129,14 @@ public class ApiUserController implements FeignUserService {
 
     @Override
     @ApiOperation("更新用户信息")
-    public boolean updateUser(@ApiParam("待更新的用户信息") @RequestBody UserDto userDto) {
+    public boolean updateUser(@Valid @ApiParam("待更新的用户信息") @RequestBody UserDto userDto) {
         User user = convertDtoToModel(userDto);
         return userService.updateUser(user);
     }
 
     @Override
     @ApiOperation("删除用户")
-    public boolean deleteUser(@ApiParam("待删除的用户信息") @RequestBody UserDto userDto) {
+    public boolean deleteUser(@Valid @ApiParam("待删除的用户信息") @RequestBody UserDto userDto) {
         User user = convertDtoToModel(userDto);
         return userService.deleteUser(user);
     }
