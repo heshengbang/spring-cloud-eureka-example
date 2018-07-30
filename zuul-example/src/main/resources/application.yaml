@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: zuul-example
+server:
+  port: 8080
+
+#这里的配置表示，访问/it/** 直接重定向到http://www.ityouknow.com/**
+zuul:
+  routes:
+    baidu:
+      url: http:localhost:8080
+      path: /it/**
