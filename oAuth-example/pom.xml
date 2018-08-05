@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>com.hsb.cloud.boot</groupId>
 		<artifactId>spring-cloud-parent</artifactId>
-		<version>2.0-SNAPSHOT</version>
+		<version>1.0-SNAPSHOT</version>
 		<relativePath>../spring-cloud-parent/pom.xml</relativePath>
 	</parent>
 
@@ -26,46 +26,30 @@
 	</properties>
 
 	<dependencies>
+		<!-- 注意是starter,自动配置 -->
 		<dependency>
-			<groupId>com.hsb.cloud.api</groupId>
-			<artifactId>spring-cloud-api</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		<!-- 不是starter,手动配置 -->
 		<dependency>
-			<groupId>com.hsb.cloud.web</groupId>
-			<artifactId>spring-cloud-web</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-oauth2</artifactId>
-		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.boot</groupId>-->
-			<!--<artifactId>spring-boot-starter-security</artifactId>-->
-		<!--</dependency>-->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- 将token存储在redis中 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 	</dependencies>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 	<build>
 		<plugins>
@@ -75,6 +59,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

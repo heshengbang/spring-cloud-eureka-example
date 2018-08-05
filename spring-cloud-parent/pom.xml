@@ -12,7 +12,7 @@
 
     <groupId>com.hsb.cloud.boot</groupId>
     <artifactId>spring-cloud-parent</artifactId>
-    <version>2.0-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
