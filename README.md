@@ -26,7 +26,8 @@ spring-cloud-consumer through eureka-server find service that spring-cloud-produ
 - TkMapper
 - p3c
 - mvn clean compile checkstyle:check findbugs:check
-- zuul
+- zuul #
 - zookeeper
+- OAuth2 #
 
 Attention, the items marked by `#` had been integrated to this project, and left items will be integrate in the future.

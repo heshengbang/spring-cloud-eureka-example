@@ -1,3 +1,4 @@
+# https://blog.csdn.net/zhanglh046/article/details/78651993/ resource
 spring:
   application:
     name: zuul-example
