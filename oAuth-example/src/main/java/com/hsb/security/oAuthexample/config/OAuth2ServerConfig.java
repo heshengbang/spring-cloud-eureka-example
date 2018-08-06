@@ -93,6 +93,7 @@ public class OAuth2ServerConfig {
         @Override
         public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
             endpoints
+                    //这里无论配几个TokenStore都会以最后一个为准，例如这里，最终以InMemoryTokenStore为准
                     .tokenStore(new RedisTokenStore(redisConnectionFactory))
                     .tokenStore(new InMemoryTokenStore())
                     .authenticationManager(authenticationManager)
