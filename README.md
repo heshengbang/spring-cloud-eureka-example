@@ -31,3 +31,8 @@ spring-cloud-consumer through eureka-server find service that spring-cloud-produ
 - OAuth2 #
 
 Attention, the items marked by `#` had been integrated to this project, and left items will be integrate in the future.
+
+## mybatis-generator的使用
+- 创建generatorConfig.xml
+- 修改其中的内容
+- 执行指令：`mvn mybatis-generator:generate`
