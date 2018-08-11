@@ -1,5 +1,6 @@
 package com.hsb.spring.boot.config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
@@ -21,6 +22,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * Github: https://github.com/heshengbang
  * Time: 2018/8/11 16:05
  */
+
 @Configuration
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
@@ -53,9 +55,10 @@ public class RedisConfig extends CachingConfigurerSupport {
     @Bean
     public KeyGenerator keyGenerator() {
         return (target, method, objects) -> {
-            StringBuffer sb = new StringBuffer();
-            sb.append(target.getClass().getName()).append(method.getName());
+            StringBuilder sb = new StringBuilder();
+            sb.append(target.getClass().getName()).append(".").append(method.getName());
             for (Object object: objects) {
+                sb.append(".");
                 sb.append(object.toString());
             }
             return sb.toString();
