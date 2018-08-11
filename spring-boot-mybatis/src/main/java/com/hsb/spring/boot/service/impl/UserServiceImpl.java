@@ -18,14 +18,11 @@ import java.util.List;
  */
 @Service
 public class UserServiceImpl implements UserService {
-    private final RedisTemplate<String, Object> redisTemplate;
-    private final UserMapper userMapper;
-
+//    @Autowired
+//    private RedisTemplate<String, Object> redisTemplate;
     @Autowired
-    public UserServiceImpl(RedisTemplate<String, Object> redisTemplate, UserMapper userMapper) {
-        this.redisTemplate = redisTemplate;
-        this.userMapper = userMapper;
-    }
+    private UserMapper userMapper;
+
 
     @Override
     public List<User> getAllUsers() {
@@ -34,21 +31,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(String id) {
-        if (redisTemplate.hasKey(id)) {
-            return (User) redisTemplate.opsForValue().get(id);
-        }
+//        if (redisTemplate.hasKey(id)) {
+//            return (User) redisTemplate.opsForValue().get(id);
+//        }
         User user = userMapper.getUser(id);
-        redisTemplate.opsForValue().set(id, user);
+//        redisTemplate.opsForValue().set(id, user);
         return user;
     }
 
     @Override
     public int updateUser(User user) {
         int influenceRow = userMapper.updateUser(user);
-        if (redisTemplate.hasKey(user.getId())) {
-            redisTemplate.delete(user.getId());
-            redisTemplate.opsForValue().set(user.getId(), user);
-        }
+//        if (redisTemplate.hasKey(user.getId())) {
+//            redisTemplate.delete(user.getId());
+//            redisTemplate.opsForValue().set(user.getId(), user);
+//        }
         return influenceRow;
     }
 
@@ -60,9 +57,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public int delete(String id) {
         int influenceRow = userMapper.delete(id);
-        if (redisTemplate.hasKey(id)) {
-            redisTemplate.delete(id);
-        }
+//        if (redisTemplate.hasKey(id)) {
+//            redisTemplate.delete(id);
+//        }
         return influenceRow;
     }
 }
