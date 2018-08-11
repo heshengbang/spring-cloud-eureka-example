@@ -16,6 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * Time: 2018/8/10 9:17
  */
 @RunWith(SpringJUnit4ClassRunner.class)
+// SpringBootRedisApplication是spring-boot项目中的主程序
 @SpringBootTest(classes = SpringBootRedisApplication.class)
 public class RedisTest {
 
@@ -29,5 +30,4 @@ public class RedisTest {
         conn.set("hello".getBytes(), "world".getBytes());
         System.out.println(new String(conn.get("hello".getBytes())));
     }
-
 }

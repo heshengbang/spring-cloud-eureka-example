@@ -55,8 +55,13 @@ public class UserController {
         userDao.delete(username);
     }
 
-    @GetMapping("/test")
-    public void test() {
-        userDao.test();
+    @GetMapping("/addAll")
+    public void addAll() {
+        userDao.addAll();
+    }
+
+    @GetMapping("/removeAll")
+    public void removeAll() {
+        userDao.removeAll();
     }
 }
