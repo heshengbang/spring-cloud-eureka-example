@@ -23,8 +23,12 @@ import java.util.List;
 
 @RestController
 public class RoleController {
+    private final RoleMapper roleMapper;
+
     @Autowired
-    private RoleMapper roleMapper;
+    public RoleController(RoleMapper roleMapper) {
+        this.roleMapper = roleMapper;
+    }
 
     @GetMapping("/roles")
     public List<Role> selectAll() {

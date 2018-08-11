@@ -1,8 +1,7 @@
 package com.hsb.spring.boot.web;
 
 import com.hsb.spring.boot.entity.User;
-import com.hsb.spring.boot.mapper.UserMapper;
-import java.util.List;
+import com.hsb.spring.boot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * Created by heshengbang on 2018/8/7.
  * https://github.com/heshengbang
@@ -22,31 +23,31 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
     @Autowired
-    private UserMapper userMapper;
+    private UserService userService;
 
     @GetMapping("/users")
     public List<User> getAllUsers() {
-        return userMapper.getAllUsers();
+        return userService.getAllUsers();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/user/{id}")
     public User getUser(@PathVariable("id") String id) {
-        return userMapper.getUser(id);
+        return userService.getUser(id);
     }
 
     @PostMapping("/")
     public int insertUser(@RequestBody User user) {
-        return userMapper.insertUser(user);
+        return userService.insertUser(user);
     }
 
     @PutMapping("/")
     public int updateUser(@RequestBody User user) {
-        return userMapper.updateUser(user);
+        return userService.updateUser(user);
     }
 
     @DeleteMapping("/")
     public int delete(@RequestParam("id") String id) {
-        return userMapper.delete(id);
+        return userService.delete(id);
     }
 
 }

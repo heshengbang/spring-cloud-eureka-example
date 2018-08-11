@@ -35,7 +35,7 @@
        		(#{username}, #{password}, #{sex}, #{age}, #{born})
     </insert>
 
-    <update id="update" parameterType="com.hsb.spring.boot.entity.User" >
+    <update id="updateUser" parameterType="com.hsb.spring.boot.entity.User" >
         UPDATE
         sys_users
         SET
