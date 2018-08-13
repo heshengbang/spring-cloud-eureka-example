@@ -1,10 +1,9 @@
 package com.hsb.spring.boot.web;
 
-import com.hsb.spring.boot.send.ManyToManySenderA;
-import com.hsb.spring.boot.send.ManyToManySenderB;
+import com.hsb.spring.boot.sender.ManyToManySenderA;
+import com.hsb.spring.boot.sender.ManyToManySenderB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
  * Time: 2018/8/13 13:53
  */
 @RestController
-@RequestMapping("/manyToMany")
 public class ManyToManyController {
     @Autowired
     private ManyToManySenderA manyToManySenderA;

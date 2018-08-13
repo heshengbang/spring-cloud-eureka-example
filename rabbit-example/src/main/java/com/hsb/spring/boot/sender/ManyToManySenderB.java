@@ -1,26 +1,26 @@
-package com.hsb.spring.boot.send;
+package com.hsb.spring.boot.sender;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.Date;
 
 /**
  * created by heshengbang
  * Blog: https://www.heshengbang.tech
  * Twitter: https://twitter.com/heshengbang
  * Github: https://github.com/heshengbang
- * Time: 2018/8/13 14:41
+ * Time: 2018/8/13 13:51
  */
-
 @Component
-public class FanoutSender {
-
+public class ManyToManySenderB {
     @Autowired
     private AmqpTemplate rabbitTemplate;
 
-    public void send() {
-        String msgString="fanoutSender : hello i am hsb";
-        System.out.println(msgString);
-        this.rabbitTemplate.convertAndSend("fanoutExchange","fanout.message", msgString);
+    public void send(String msg) {
+        String sendMsg = msg + " " + new Date();
+        System.out.println("Sender2 : " + sendMsg);
+        this.rabbitTemplate.convertAndSend("manyToMany", sendMsg);
     }
 }

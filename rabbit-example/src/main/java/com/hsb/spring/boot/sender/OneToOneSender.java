@@ -1,4 +1,4 @@
-package com.hsb.spring.boot.send;
+package com.hsb.spring.boot.sender;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

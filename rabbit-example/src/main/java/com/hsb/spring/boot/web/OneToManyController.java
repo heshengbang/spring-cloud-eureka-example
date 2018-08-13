@@ -1,6 +1,6 @@
 package com.hsb.spring.boot.web;
 
-import com.hsb.spring.boot.send.OneToManySender;
+import com.hsb.spring.boot.sender.OneToManySender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

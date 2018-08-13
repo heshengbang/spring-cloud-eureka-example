@@ -1,9 +1,8 @@
 package com.hsb.spring.boot.web;
 
-import com.hsb.spring.boot.send.FanoutSender;
+import com.hsb.spring.boot.sender.FanoutSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
  * Time: 2018/8/13 14:47
  */
 @RestController
-@RequestMapping("/fanout")
 public class FanoutMessageController {
 
     @Autowired

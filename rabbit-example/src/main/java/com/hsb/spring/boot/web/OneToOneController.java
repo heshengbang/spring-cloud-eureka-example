@@ -1,9 +1,8 @@
 package com.hsb.spring.boot.web;
 
-import com.hsb.spring.boot.send.OneToOneSender;
+import com.hsb.spring.boot.sender.OneToOneSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -15,13 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/oneToOne")
 public class OneToOneController {
 
     @Autowired
     private OneToOneSender oneToOneSender;
 
-    @PostMapping("/hello")
+    @PostMapping("/oneToOne")
     public void hello() {
         oneToOneSender.send();
     }

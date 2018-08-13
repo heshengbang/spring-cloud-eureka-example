@@ -1,9 +1,8 @@
 package com.hsb.spring.boot.web;
 
-import com.hsb.spring.boot.send.TopicMessageSender;
+import com.hsb.spring.boot.sender.TopicMessageSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
  * Time: 2018/8/13 14:13
  */
 @RestController
-@RequestMapping("/topic")
 public class TopicMessageController {
     @Autowired
     private TopicMessageSender topicMessageSender;

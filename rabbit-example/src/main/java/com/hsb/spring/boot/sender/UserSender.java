@@ -1,4 +1,4 @@
-package com.hsb.spring.boot.send;
+package com.hsb.spring.boot.sender;
 
 import com.hsb.spring.boot.entity.User;
 import org.springframework.amqp.core.AmqpTemplate;
@@ -23,7 +23,7 @@ public class UserSender {
         User user = new User();
         user.setName("hsb");
         user.setPass("123456789");
-        System.out.println("user send : " + user.getName() + "/" + user.getPass());
+        System.out.println("user sender : " + user.getName() + "/" + user.getPass());
         this.rabbitTemplate.convertAndSend("userQueue", user);
     }
 }

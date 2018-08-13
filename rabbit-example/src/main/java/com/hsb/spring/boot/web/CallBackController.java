@@ -1,8 +1,8 @@
 package com.hsb.spring.boot.web;
 
-import com.hsb.spring.boot.sender.UserSender;
+import com.hsb.spring.boot.sender.CallBackSender;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -10,18 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
  * Blog: https://www.heshengbang.tech
  * Twitter: https://twitter.com/heshengbang
  * Github: https://github.com/heshengbang
- * Time: 2018/8/13 14:01
+ * Time: 2018/8/13 15:18
  */
 @RestController
-public class UserController {
+public class CallBackController {
     @Autowired
-    private UserSender userSender;
+    private CallBackSender callBackSender;
 
-    /**
-     * 实体类传输测试
-     */
-    @RequestMapping("/user")
-    public void userTest() {
-        userSender.send();
+    @PostMapping("/callback")
+    public void callback() {
+        callBackSender.send();
     }
 }
