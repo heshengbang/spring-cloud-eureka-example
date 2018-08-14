@@ -16,19 +16,20 @@ spring-cloud-consumer through eureka-server find service that spring-cloud-produ
 - swagger #
 - Feign/Spring boot/spring cloud/Eureka #
 - HBase
-- elasticjob
-- rabbitmq
-- redis
+- elasticJob
+- rabbitmq #
+- redis #
 - druid
 - pageHelper
 - mybatis
 - lombok #
 - TkMapper
 - p3c
-- mvn clean compile checkstyle:check findbugs:check
 - zuul #
 - zookeeper
 - OAuth2 #
+- kafka
+- mvn clean compile checkstyle:check findbugs:check
 
 Attention, the items marked by `#` had been integrated to this project, and left items will be integrate in the future.
 
