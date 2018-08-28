@@ -20,7 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class Swagger2 {
+public class Swagger2Config {
 
 
     @Bean
@@ -38,6 +38,7 @@ public class Swagger2 {
                 .title("xx项目 RESTful APIs")
                 .description("xx项目后台api接口文档")
                 .version("1.0")
+                .description("API 描述")
                 .build();
     }
 

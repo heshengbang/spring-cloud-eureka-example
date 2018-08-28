@@ -17,7 +17,5 @@ public class User {
     private int id;
     private String username;
     private int age;
-    private Date ctm;
-
-    // Getter Setter
+    private Date burn;
 }
