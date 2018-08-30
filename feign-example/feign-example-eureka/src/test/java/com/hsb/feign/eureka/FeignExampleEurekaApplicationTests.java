@@ -1,4 +1,4 @@
-package com.hsb.feign.eureka.feignexampleeureka;
+package com.hsb.feign.eureka;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
