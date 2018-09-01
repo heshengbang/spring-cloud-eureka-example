@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import springfox.documentation.annotations.ApiIgnore;
 
@@ -67,7 +68,8 @@ public class UserController {
      */
     @ApiOperation(value="获取用户列表", notes="获取用户列表")
     @GetMapping(value = "/")
-    public List<UserVo> getBatchByUsername(@ApiParam("id集合") @RequestBody List<String> ids) throws Exception {
+    public List<UserVo> getBatchByUsername(@ApiParam("id集合") @RequestParam("ids") List<String> ids) throws Exception {
+
         if (CollectionUtils.isEmpty(ids)) {
             throw new Exception("参数为空集合");
         }
