@@ -116,4 +116,20 @@ public class UserDao {
         redisTemplate.delete("tongheshang");
         redisTemplate.delete("dilireba");
     }
+
+    public List<User> getBatchByUsername(List<String> usernames) {
+        List<User> results = new ArrayList<>(usernames.size());
+        usernames.forEach(username -> {
+            if (redisTemplate.hasKey(username)) {
+                results.add((User) redisTemplate.opsForValue().get(username));
+            } else {
+                users.forEach(user -> {
+                    if (user.getUsername().equals(username)) {
+                        results.add(user);
+                    }
+                });
+            }
+        });
+        return results;
+    }
 }

@@ -6,15 +6,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import javax.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,8 +16,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import springfox.documentation.annotations.ApiIgnore;
+
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 /**
  * created by heshengbang
@@ -59,11 +62,33 @@ public class UserController {
     }
 
     /**
+     * 根据id集合批量查用户
+     * @param ids id集合
+     * @return 用户值对象集合
+     */
+    @ApiOperation(value="获取用户列表", notes="获取用户列表")
+    @GetMapping(value = "/")
+    public List<UserVo> getBatchByUsername(@ApiParam("id集合") @RequestParam("ids") List<String> ids) throws Exception {
+
+        if (CollectionUtils.isEmpty(ids)) {
+            throw new Exception("参数为空集合");
+        }
+        List<UserVo> userVos = new ArrayList<>(ids.size());
+        ids.forEach(id -> {
+            User user = users.get(Integer.valueOf(id));
+            UserVo userVo = new UserVo();
+            BeanUtils.copyProperties(user, userVo);
+            userVos.add(userVo);
+        });
+        return userVos;
+    }
+
+    /**
      * 查询用户列表
      * @return 用户值对象列表
      */
     @ApiOperation(value="获取用户列表", notes="获取用户列表")
-    @GetMapping(value = "/")
+    @GetMapping(value = "/getAll/")
     public List<UserVo> getUserList (){
         List<User> userList = new ArrayList<>(users.values());
         List<UserVo> userVos = new ArrayList<>(userList.size());

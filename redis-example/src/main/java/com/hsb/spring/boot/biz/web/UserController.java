@@ -64,4 +64,9 @@ public class UserController {
     public void removeAll() {
         userDao.removeAll();
     }
+
+    @GetMapping("/")
+    public List<User> getBatchByUsername(@RequestBody List<String> usernames) {
+        return userDao.getBatchByUsername(usernames);
+    }
 }

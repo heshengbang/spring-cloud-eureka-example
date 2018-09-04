@@ -15,10 +15,10 @@ spring-cloud-consumer through eureka-server find service that spring-cloud-produ
 ## key words
 - swagger #
 - Feign/Spring boot/spring cloud/Eureka #
+- redis #
 - HBase
 - elasticJob
 - rabbitmq #
-- redis #
 - druid
 - pageHelper
 - mybatis
