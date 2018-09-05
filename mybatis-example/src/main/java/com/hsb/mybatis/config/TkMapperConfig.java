@@ -19,7 +19,7 @@ public class TkMapperConfig {
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer () {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
-        mapperScannerConfigurer.setBasePackage("com.hsb.mybatis.biz");
+        mapperScannerConfigurer.setBasePackage("com.hsb.mybatis.**.dao");
         Properties properties = new Properties();
         properties.setProperty("ORDER", "BEFORE");
         mapperScannerConfigurer.setProperties(properties);
