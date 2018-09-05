@@ -35,6 +35,12 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>${mybatis.spring.version}</version>
 		</dependency>
+		<!--通用Mapper-->
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper</artifactId>
+			<version>${mapper.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -74,6 +80,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>
