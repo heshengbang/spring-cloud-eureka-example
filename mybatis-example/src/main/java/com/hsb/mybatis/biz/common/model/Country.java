@@ -4,10 +4,12 @@ package com.hsb.mybatis.biz.common.model;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author heshengbang
  */
+@Table(name = "country")
 public class Country {
     @Id
     @Column(name = "ID")
