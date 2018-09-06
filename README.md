@@ -13,23 +13,22 @@ This project provide three modules. Eureka Server/service producer/service consu
 spring-cloud-consumer through eureka-server find service that spring-cloud-produer provide. when some request come to spring-cloud-consumer, it will call spring-cloud-producer to finish this request.
 
 ## key words
-- swagger #
-- Feign/Spring boot/spring cloud/Eureka #
-- redis #
+- [swagger](https://github.com/heshengbang/spring-cloud-example/tree/master/swagger-example)
+- [Feign/Spring boot/spring cloud/Eureka](https://github.com/heshengbang/spring-cloud-example/tree/master/feign-example)
+- [redis](https://github.com/heshengbang/spring-cloud-example/tree/master/redis-example)
+- [mybatis+mapper+page helper](https://github.com/heshengbang/spring-cloud-example/tree/master/mybatis-example)
+	- `mvn clean compile checkstyle:check findbugs:check`
 - HBase
 - elasticJob
 - rabbitmq #
 - druid
 - pageHelper
-- mybatis
-- lombok #
-- TkMapper
 - p3c
 - zuul #
 - zookeeper
 - OAuth2 #
 - kafka
-- mvn clean compile checkstyle:check findbugs:check
+
 
 Attention, the items marked by `#` had been integrated to this project, and left items will be integrate in the future.
 

@@ -48,7 +48,8 @@ logging:
   level:
     com.hsb.mybatis.biz.dao: debug
 ```
-- 编写Mapper扫描文件，这个非常***重要***
+
+- 编写Mapper扫描文件，这个非常*重要*
     - 使用mybatis和其他Dao层框架不同，使用@Repository注解并不会起作用
     - mybatis的Dao层那些Mapper根本不是一个类，而是一个接口，声明了一些方法，具体的实现并不在这里，因此添加@Repository不会起作用
     - 通常使用者可以选择使用@Mapper注解，这在mybatis中近似于替代@Repository的作用
@@ -67,6 +68,10 @@ logging:
             }
         }
     ```
+
     - 上面这段代码通过编码的方式告知了spring容器，Mapper.java文件的具体位置，这个位置是最接近文件的那个包名，可以使用通配符，但是它并不会递归扫描子包，因此最好写清楚一点
-    
+
 - 启动项目，测试功能
+
+### page helper的使用
+- 参考[GitHub项目主页](https://github.com/pagehelper/Mybatis-PageHelper/blob/master/README_zh.md)

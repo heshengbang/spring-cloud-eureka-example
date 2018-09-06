@@ -1,7 +1,10 @@
 package com.hsb.mybatis.biz.web;
 
+import com.hsb.mybatis.biz.common.dto.CountryQueryDto;
 import com.hsb.mybatis.biz.common.model.Country;
+import com.hsb.mybatis.biz.common.vo.PageVo;
 import com.hsb.mybatis.biz.service.CountryService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * @author heshengbang
@@ -28,6 +29,12 @@ public class CountryController {
 
     @Autowired
     private CountryService countryService;
+
+    @GetMapping("/page")
+    public PageVo<Country> getWithPage(CountryQueryDto countryQueryDto) {
+        return countryService.getWithPage(countryQueryDto);
+    }
+
 
     @GetMapping("/condition")
     public List<Country> getByCondition(@RequestParam("nameOrCode") String nameOrCode) {

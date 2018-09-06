@@ -1,7 +1,8 @@
 package com.hsb.mybatis.biz.service;
 
+import com.hsb.mybatis.biz.common.dto.CountryQueryDto;
 import com.hsb.mybatis.biz.common.model.Country;
-
+import com.hsb.mybatis.biz.common.vo.PageVo;
 import java.util.List;
 
 /**
@@ -24,4 +25,6 @@ public interface CountryService {
     int updateOne(Country country);
 
     int deleteOne(Country country);
+
+    PageVo<Country> getWithPage(CountryQueryDto countryQueryDto);
 }

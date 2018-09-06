@@ -1,13 +1,18 @@
 package com.hsb.mybatis.biz.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.hsb.mybatis.biz.common.dto.CountryQueryDto;
 import com.hsb.mybatis.biz.common.model.Country;
+import com.hsb.mybatis.biz.common.util.CommonUtil;
+import com.hsb.mybatis.biz.common.vo.PageVo;
 import com.hsb.mybatis.biz.dao.CountryMapper;
 import com.hsb.mybatis.biz.service.CountryService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
-
-import java.util.List;
 
 /**
  * @author heshengbang
@@ -57,5 +62,24 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public int deleteOne(Country country) {
         return countryMapper.delete(country);
+    }
+
+    @Override
+    public PageVo<Country> getWithPage(CountryQueryDto countryQueryDto) {
+        //获取第1页，10条内容，默认查询总数count
+        PageHelper.startPage(countryQueryDto.getPageNum(), countryQueryDto.getPageSize());
+
+        Example example = new Example(Country.class);
+        Example.Criteria criteria = example.createCriteria();
+        if(StringUtils.hasText(countryQueryDto.getName())){
+            criteria.andLike("countryName", "%" + countryQueryDto.getName() + "%");
+        }
+        if(StringUtils.hasText(countryQueryDto.getCode())){
+            criteria.andLike("countryCode", "%" + countryQueryDto.getCode() + "%");
+        }
+        List<Country> countries = countryMapper.selectByExample(example);
+
+        //用PageInfo对结果进行包装
+        return CommonUtil.convertPageInfo(new PageInfo<>(countries));
     }
 }
