@@ -11,7 +11,7 @@ zuul:
   ignoredServices: /**/hello/**
   routes:
     # 允许将服务名映射到heshengbang
-#    zuul-example: /heshengbang/**
+    # zuul-example: /heshengbang/**
     users:
        path: /heshengbang/**
        url: http://localhost:8080

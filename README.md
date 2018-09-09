@@ -18,21 +18,15 @@ spring-cloud-consumer through eureka-server find service that spring-cloud-produ
 - [redis](https://github.com/heshengbang/spring-cloud-example/tree/master/redis-example)
 - [mybatis+mapper+page helper](https://github.com/heshengbang/spring-cloud-example/tree/master/mybatis-example)
 	- `mvn clean compile checkstyle:check findbugs:check`
+	
+- OAuth2 #
 - HBase
 - elasticJob
 - rabbitmq #
 - druid
-- pageHelper
 - p3c
 - zuul #
 - zookeeper
-- OAuth2 #
 - kafka
-
-
-Attention, the items marked by `#` had been integrated to this project, and left items will be integrate in the future.
-
-## mybatis-generator的使用
-- 创建generatorConfig.xml
-- 修改其中的内容
-- 执行指令：`mvn mybatis-generator:generate`
+- Ribbon
+- Hystrix
