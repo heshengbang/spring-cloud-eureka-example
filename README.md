@@ -30,3 +30,4 @@ spring-cloud-consumer through eureka-server find service that spring-cloud-produ
 - kafka
 - Ribbon
 - Hystrix
+- ElasticSearch
