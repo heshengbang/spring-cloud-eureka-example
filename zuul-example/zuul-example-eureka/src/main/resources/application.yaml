@@ -9,6 +9,7 @@ eureka:
   server:
     eviction-interval-timer-in-ms: 30000
     enable-self-preservation: true
+  # 这一段可加可不加，但是如果不加，eureka-server就无法作为一部分注册到eureka服务之中，控制台就会一直报错
   client:
     register-with-eureka: false
     fetch-registry: false
