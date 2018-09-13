@@ -69,3 +69,13 @@
 	- 访问localhost:7000/web/test?param=test，正常情况下，页面显示test
 	- 访问localhost:9000/web/test?param=test，正常情况下，页面显示test
 	- 验证成功，完成极简化Zuul使用
+
+
+
+- Zuul权限认证的基本思路
+	- 代码参考`com.hsb.zuul.gateway.config.TokenFilter`
+	- 继承ZuulFilter，实现抽象方法
+	- 检查Request中是否携带有token
+		- 真实情况中token通常不会放到parameter中，而是放到header中
+	- 没有token，则直接执行失败响应，返回错误信息
+	- 如果有token，则正确执行下去，和一般的filter类似
