@@ -1,5 +1,6 @@
 package com.hsb.spring.boot;
 
+import com.hsb.spring.boot.entity.People;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
@@ -13,8 +14,14 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class ConsumerListener {
-    @KafkaListener(topics = {"xixi", "test1"})
-    public void listen (ConsumerRecord<?, ?> record) throws Exception {
+    @KafkaListener(topics = {"xixi", "test1"}, containerFactory = "basicListener")
+    public void listen (ConsumerRecord<String, String> record) {
         System.out.printf("topic = %s, offset = %d, value = %s \n", record.topic(), record.offset(), record.value());
+    }
+
+    @KafkaListener(topics = "people", containerFactory = "peopleListener")
+    public void listenPeople(ConsumerRecord<String, People> record) {
+        System.out.printf("topic = %s, offset = %d \n", record.topic(), record.offset());
+        System.out.printf("名字 = %s  出生日期 = %s  年龄 = %s", record.value().getName(), record.value().getBorn(), record.value().getAge());
     }
 }
