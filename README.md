@@ -24,10 +24,9 @@ spring-cloud-consumer through eureka-server find service that spring-cloud-produ
 - elasticJob
 - rabbitmq #
 - druid
-- p3c
 - zuul #
-- zookeeper
-- kafka
+- zookeeper #
+- kafka #
 - Ribbon
 - Hystrix
 - ElasticSearch
